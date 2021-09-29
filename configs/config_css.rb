@@ -1,8 +1,32 @@
-def add_sizing_css
-<<-'SCSS'
+
+def add_bootstrap_variables_css
+<<-SCSS
 $navbar-height: 100px;
 $footer-height: 100px;
 
+$blue-light: #BFD2D5;
+$yellow-smooth: #F2B960;
+$orange-smooth: #E65A2F;
+$dark-gray: #39404d;
+$light-gray: #f9f9f9;
+$dark-transparent: rgba(50, 50, 50, 0.8);
+$alert-info: $yellow-smooth;
+$alert-warning: $orange-smooth;
+$cookie: $blue-light;
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+)
+SCSS
+end
+def add_sizing_css
+<<-'SCSS'
 .page-min-height {
   min-height: calc(100vh - #{$navbar-height} - #{$footer-height})
 }
@@ -82,16 +106,6 @@ end
 
 def add_colors_css
 <<-'SCSS'
-$blue-light: #BFD2D5;
-$yellow-smooth: #F2B960;
-$orange-smooth: #E65A2F;
-$dark-gray: #39404d;
-$light-gray: #f9f9f9;
-$dark-transparent: rgba(50, 50, 50, 0.8);
-$alert-info: $yellow-smooth;
-$alert-warning: $orange-smooth;
-$cookie: $blue-light;
-
 $colors: ("blue-light", $blue-light), ("yellow-smooth", $yellow-smooth), ("orange-smooth", $orange-smooth), ("dark-gray", $dark-gray), ("light-gray", $light-gray),
   ("cookie", $cookie);
 
@@ -113,7 +127,6 @@ def add_font_css
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,,500,600&display=swap');
 
 $fonts: 12px 14px 18px 20px;
-
 @each $font in $fonts {
   .font-size-#{$font} {
     font-size: $font;
@@ -183,20 +196,6 @@ def add_footer_css
     }
   }
 }
-SCSS
-end
-
-def add_bootstrap_variables_css
-<<-SCSS
-$spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3)
-)
 SCSS
 end
 
