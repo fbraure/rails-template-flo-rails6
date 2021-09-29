@@ -219,7 +219,7 @@ after_bundle do
     add_webpack_js
   end
 
-  run "rails webpacker:install:stimulus"
+  # run "rails webpacker:install:stimulus"
   file 'app/javascript/plugins/init_mapbox.js', add_mapbox_js
   run 'yarn add mapbox-gl'
   file 'config/initializers/geocoder.rb', add_geocoder_ruby

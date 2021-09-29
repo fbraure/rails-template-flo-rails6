@@ -460,10 +460,10 @@ end
 
 def add_config_index_css
 <<-SCSS
+@import "bootstrap_variables";
 @import "fonts";
 @import "colors";
 @import "sizing";
-@import "bootstrap_variables";
 SCSS
 end
 def add_layouts_index_css
